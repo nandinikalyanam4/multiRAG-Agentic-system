@@ -47,6 +47,7 @@ def llm_call(system: str, user: str, json_mode: bool = False, model: str = None)
     }
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
+        kwargs["messages"][0]["content"] += " Respond in JSON."
     response = client.chat.completions.create(**kwargs)
     return response.choices[0].message.content
 

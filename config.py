@@ -1,16 +1,22 @@
 # ======================== FILE: config.py ========================
 import os
-from pydantic_settings import BaseSettings
 from pathlib import Path
+from typing import Optional
+
+from pydantic_settings import BaseSettings
+
 
 class Settings(BaseSettings):
-    # API Keys
-    openai_api_key: str = os.getenv("OPENAI_API_KEY", "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")
+    # API Keys (must be provided via environment or .env)
+    openai_api_key: str = os.getenv("OPENAI_API_KEY", "")
 
     # Directories
     base_dir: Path = Path("./data")
     upload_dir: Path = Path("./data/uploads")
     chroma_dir: Path = Path("./data/chroma")
+
+    # Optional: path to LoRA adapters for local generation (set LORA_ADAPTERS_PATH in .env)
+    lora_adapters_path: Optional[Path] = None
 
     # Models
     llm_model: str = "gpt-4o-mini"
