@@ -1,6 +1,6 @@
 ## RL-Enhanced Multi-Agent RAG System
 
-An end-to-end, production-style Retrieval-Augmented Generation (RAG) system that showcases **advanced AI system design**:
+An end-to-end, production-style Retrieval-Augmented Generation (RAG) system:
 
 - **10+ specialized RAG agents** (naive, sentence-window, parent-child, agentic, multimodal, table, graph, hybrid, HyDE, corrective).
 - **RL-based multi-armed bandit router** that learns which agent works best per question type.
@@ -9,9 +9,6 @@ An end-to-end, production-style Retrieval-Augmented Generation (RAG) system that
 - **FastAPI backend** with clean, documented endpoints and Docker deployment.
  - **Offline eval + A/B testing**: `evals.py` runs multi-agent comparisons with optional LLM-as-judge scoring.
  - **Model adaptation pipeline**: documented loop for LoRA/SFT, distillation, quantization, and RL-based routing.
-
-This is designed as a portfolio-quality project you can hand to founding teams to demonstrate **deep, practical AI systems knowledge**.
-
 ---
 
 ### High-Level Architecture
@@ -148,13 +145,4 @@ curl "http://localhost:8000/rl/leaderboard"
 
 ---
 
-### Why This Is “Very Advanced” AI Work
-
-- **System-level thinking**: not just “call an LLM”, but a full retrieval, routing, feedback, and learning loop.
-- **RL + bandits**: concrete application of UCB1 for agent selection, with smart priors and persistent state.
-- **Multi-agent orchestration**: different retrieval strategies for different query types, with auto-selection and compare mode.
-- **Instrumentation & introspection**: logs, stats endpoints, offline eval harness, and self-improvement analysis.
-- **Production practices**: FastAPI, environment-based config, Dockerfile, and clear separation of concerns.
-
-This codebase is intentionally structured to be **readable by other senior engineers** and to make it obvious that you understand modern AI system design beyond basic prompt engineering.
 
